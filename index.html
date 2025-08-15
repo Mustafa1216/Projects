@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Mustafa Damon</title>
+  <meta name="description" content="Projects repository: Websites, Figma projects, Brand Guides, and LinkedIn Learning certificates by Mustafa Damon." />
+  <style>
+    :root {
+      --bg: #0e0f12;
+      --card: #15171c;
+      --text: #e8e8ea;
+      --muted: #b7b7c0;
+      --accent: #7aa2ff;
+      --ring: rgba(122,162,255,.35);
+      --border: #23252b;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 1200px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fafafa;
+        --card: #ffffff;
+        --text: #16181d;
+        --muted: #525866;
+        --accent: #2b59ff;
+        --ring: rgba(43,89,255,.2);
+        --border: #e7e7ec;
+        --shadow: 0 12px 24px rgba(16,24,40,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(122,162,255,.08), transparent 60%),
+                  radial-gradient(1000px 500px at 110% -20%, rgba(122,162,255,.06), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    }
+    header {
+      max-width: var(--maxw);
+      margin: 40px auto 10px;
+      padding: 0 20px;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: .3px;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+    }
+    main { max-width: var(--maxw); margin: 24px auto 80px; padding: 0 20px; }
+    section { margin: 42px 0; }
+    section h2 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      letter-spacing: .2px;
+    }
+    section > p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .card {
+      background: linear-gradient(180deg, var(--card), color-mix(in oklab, var(--card) 90%, black));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: clip;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in oklab, var(--border) 60%, var(--accent));
+      box-shadow: 0 18px 44px rgba(0,0,0,.25);
+    }
+    figure { margin: 0; position: relative; aspect-ratio: 16/10; overflow: hidden; }
+    figure img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: saturate(.98) contrast(1.02);
+    }
+    .badge {
+      position: absolute; top: 10px; left: 10px;
+      background: color-mix(in oklab, var(--accent) 15%, black);
+      color: white; border: 1px solid color-mix(in oklab, var(--accent) 45%, black);
+      padding: 4px 8px; font-size: 12px; border-radius: 999px; letter-spacing: .2px;
+      backdrop-filter: blur(6px);
+    }
+    .body {
+      padding: 14px 14px 12px;
+      display: grid; gap: 8px;
+    }
+    .title { font-weight: 650; letter-spacing: .2px; }
+    .meta { color: var(--muted); font-size: 14px; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+    .btn {
+      appearance: none; border: 1px solid var(--border); background: transparent;
+      color: var(--text); padding: 8px 10px; border-radius: 10px;
+      text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;
+      transition: border-color .18s ease, background-color .18s ease, transform .05s ease;
+    }
+    .btn:hover { border-color: var(--accent); background: color-mix(in oklab, var(--accent) 8%, transparent); }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary {
+      background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 14%, transparent), transparent);
+      border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+    }
+    .btn svg { width: 16px; height: 16px; }
+    footer { max-width: var(--maxw); margin: 60px auto 30px; padding: 0 20px; color: var(--muted); font-size: 14px; }
+    .note { border-left: 3px solid var(--accent); padding: 10px 12px; background: color-mix(in oklab, var(--card) 80%, transparent); border-radius: 6px; }
+    a.more { color: var(--accent); text-underline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projects Repository</h1>
+    <p>A curated collection of my Websites, Figma Projects, Brand Guides, and LinkedIn Learning certificates.</p>
+  </header>
+
+  <main>
+
+    <!-- Websites -->
+    <section id="websites">
+      <h2>Websites</h2>
+      <p>Selected web builds with quick previews. Download the full source as a ZIP to explore locally.</p>
+      <div class="grid">
+
+        <!-- Website 1 -->
+        <article class="card" aria-labelledby="w1-title">
+          <figure>
+            <img src="websites/site-1/preview.jpg" alt="Screenshot preview of Website 1" loading="lazy">
+            <span class="badge">HTML/CSS/JS</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="w1-title">E‑commerce Demo</div>
+            <div class="meta">Responsive storefront with product grid and cart UI.</div>
+            <div class="actions">
+              <a class="btn primary" href="websites/site-1/source.zip" download aria-label="Download Website 1 source as zip">
+                <!-- download icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download ZIP
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Website 2 -->
+        <article class="card" aria-labelledby="w2-title">
+          <figure>
+            <img src="websites/site-2/preview.jpg" alt="Screenshot preview of Website 2" loading="lazy">
+            <span class="badge">Static Site</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="w2-title">Portfolio v2</div>
+            <div class="meta">Modern portfolio with smooth scroll and section reveals.</div>
+            <div class="actions">
+              <a class="btn primary" href="websites/site-2/source.zip" download aria-label="Download Website 2 source as zip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download ZIP
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Figma Projects -->
+    <section id="figma">
+      <h2>Figma Projects</h2>
+      <p>Interface and system design files. Each card shows a preview image with a direct download of the <code>.fig</code> file.</p>
+      <div class="grid">
+
+        <article class="card" aria-labelledby="f1-title">
+          <figure>
+            <img src="figma/proj-1-preview.jpg" alt="Preview of Figma Project 1" loading="lazy">
+            <span class="badge">Figma</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="f1-title">Mobile Banking UI</div>
+            <div class="meta">Atomic components, flows & auto‑layout.</div>
+            <div class="actions">
+              <a class="btn primary" href="figma/proj-1.fig" download aria-label="Download Figma file Project 1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download .fig
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="f2-title">
+          <figure>
+            <img src="figma/proj-2-preview.jpg" alt="Preview of Figma Project 2" loading="lazy">
+            <span class="badge">Figma</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="f2-title">Old‑Money Store UX</div>
+            <div class="meta">E‑commerce flows for Timeless aesthetics.</div>
+            <div class="actions">
+              <a class="btn primary" href="figma/proj-2.fig" download aria-label="Download Figma file Project 2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download .fig
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="f3-title">
+          <figure>
+            <img src="figma/proj-3-preview.jpg" alt="Preview of Figma Project 3" loading="lazy">
+            <span class="badge">Figma</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="f3-title">ParkSpotter Design System</div>
+            <div class="meta">Tokens, components & documentation.</div>
+            <div class="actions">
+              <a class="btn primary" href="figma/proj-3.fig" download aria-label="Download Figma file Project 3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download .fig
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Brand Guides -->
+    <section id="brand-guides">
+      <h2>Brand Guides</h2>
+      <p>Concise style frameworks and full brand manuals. Download the PDFs to view complete guidelines.</p>
+      <div class="grid">
+
+        <article class="card" aria-labelledby="b1-title">
+          <figure>
+            <img src="brand-guides/guide-1-cover.jpg" alt="Cover image for Brand Guide 1" loading="lazy">
+            <span class="badge">PDF</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="b1-title">Timeless Threads — Brand Guide</div>
+            <div class="meta">Logo usage, palette, typography, assets.</div>
+            <div class="actions">
+              <a class="btn primary" href="brand-guides/guide-1.pdf" download aria-label="Download Brand Guide 1 PDF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="b2-title">
+          <figure>
+            <img src="brand-guides/guide-2-cover.jpg" alt="Cover image for Brand Guide 2" loading="lazy">
+            <span class="badge">PDF</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="b2-title">MD Visuals — Brand Guide</div>
+            <div class="meta">Core visuals & communication tone.</div>
+            <div class="actions">
+              <a class="btn primary" href="brand-guides/guide-2.pdf" download aria-label="Download Brand Guide 2 PDF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="b3-title">
+          <figure>
+            <img src="brand-guides/guide-3-cover.jpg" alt="Cover image for Brand Guide 3" loading="lazy">
+            <span class="badge">PDF</span>
+          </figure>
+          <div class="body">
+            <div class="title" id="b3-title">ParkSpotter — Mini Styleguide</div>
+            <div class="meta">Color tokens, logos, components.</div>
+            <div class="actions">
+              <a class="btn primary" href="brand-guides/guide-3.pdf" download aria-label="Download Brand Guide 3 PDF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14a2 2 0 0 0 2-2v-3"/><path d="M5 16v3a2 2 0 0 0 2 2"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LinkedIn Learning Certificates -->
+    <section id="certificates">
+      <h2>LinkedIn Learning Certificates</h2>
+      <p>Selected certification PDFs. More available on request.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="body">
+            <div class="title">Certificate #1</div>
+            <div class="actions">
+              <a class="btn primary" href="certificates/linkedin-1.pdf" download>Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="body">
+            <div class="title">Certificate #2</div>
+            <div class="actions">
+              <a class="btn primary" href="certificates/linkedin-2.pdf" download>Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="body">
+            <div class="title">Certificate #3</div>
+            <div class="actions">
+              <a class="btn primary" href="certificates/linkedin-3.pdf" download>Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="body">
+            <div class="title">Certificate #4</div>
+            <div class="actions">
+              <a class="btn primary" href="certificates/linkedin-4.pdf" download>Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="body">
+            <div class="title">Certificate #5</div>
+            <div class="actions">
+              <a class="btn primary" href="certificates/linkedin-5.pdf" download>Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="body">
+            <div class="title">Certificate #6</div>
+            <div class="actions">
+              <a class="btn primary" href="certificates/linkedin-6.pdf" download>Download PDF</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="note" style="margin-top:14px">
+        Need to see more? <a class="more" href="https://github.com/YOUR_GITHUB_USERNAME/projects/issues/new?title=Request%20more%20LinkedIn%20certificates" target="_blank" rel="noopener">Open a request</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="y"></span> Mustafa Damon · <a class="more" href="https://github.com/YOUR_GITHUB_USERNAME/projects" target="_blank" rel="noopener">View this repo on GitHub</a>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
